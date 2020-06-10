@@ -1,0 +1,25 @@
+POST http://localhost:3003/
+Content-Type: application/json
+
+{
+    "contenido":"tercera nota",
+    "importante":true
+}
+
+########3333333
+
+GET http://localhost:3003/nota/lista
+
+#########3333
+POST http://localhost:3003/usuario/registra
+Content-Type: application/json
+
+{
+    "email":"miusuario@usuario.es",
+    "usuario":"miusuario",
+    "password":"1234"
+}
+
+########3333333
+
+GET http://localhost:3003/usuario/lista
