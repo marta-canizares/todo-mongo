@@ -1,25 +1,56 @@
-POST http://localhost:3003/
+# lo vamos a proteger el post
+####
+POST http://localhost:9000/nota/nueva
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoib3Ryb3VzdWFyaW8iLCJpZCI6IjVlZTBlNWIwNjk4YjU5NGFhOGZmZjg3ZiIsImlhdCI6MTU5MTc5NzIxNn0.8vdQBMmCj--8xDpjxEa-HPyC2AUHg8cOq7nSWXb6ah4
 
 {
-    "contenido":"tercera nota",
+    "contenido":"otra nota mas",
     "importante":true
 }
 
-########3333333
 
-GET http://localhost:3003/nota/lista
 
-#########3333
-POST http://localhost:3003/usuario/registra
+
+########
+# listar las notas con un id
+GET http://localhost:9000/nota/lista
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c3VhcmlvIjoib3Ryb3VzdWFyaW8iLCJpZCI6IjVlZTBlNWIwNjk4YjU5NGFhOGZmZjg3ZiIsImlhdCI6MTU5MTc5NzIxNn0.8vdQBMmCj--8xDpjxEa-HPyC2AUHg8cOq7nSWXb6ah4
+
+
+## listar todas las notas
+##########
+GET http://localhost:9000/nota/lista/todos
+#########
+
+
+
+
+
+
+
+#### USUARIOS
+
+POST http://localhost:9000/usuario/registra
 Content-Type: application/json
 
 {
-    "email":"miusuario@usuario.es",
-    "usuario":"miusuario",
-    "password":"1234"
+    "email":"otrousuario@usuario.es",
+    "usuario":"otrousuario",
+    "password":"123456"
 }
 
-########3333333
+########
 
-GET http://localhost:3003/usuario/lista
+GET http://localhost:9000/usuario/lista
+
+
+
+##### LOGIN
+post http://localhost:9000/usuario/login
+Content-Type: application/json
+
+{
+     "usuario":"miusuario",
+    "password":"1234"
+}

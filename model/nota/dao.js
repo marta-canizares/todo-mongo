@@ -4,17 +4,20 @@ import ModeloNota from './modelo.js';
 
 class NotaDAO {
 
-    constructor(){}
+    constructor() { }
 
-    crear(nota){
+    crear(nota) {
 
         return new ModeloNota(nota).save();
     }
 
-    listar(){
-        return ModeloNota.find({});
+    listar(usuario) {
+        return ModeloNota.find(usuario)
     }
 
+    listarTodos() {
+        return ModeloNota.find({}).populate('usuario', { usuario: 1, _id: 0 })
+    }
 }
 
 export default new NotaDAO;
